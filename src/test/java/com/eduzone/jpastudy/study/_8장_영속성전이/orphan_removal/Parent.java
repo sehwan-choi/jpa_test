@@ -29,4 +29,8 @@ public class Parent {
     public void deleteChild(Child child) {
         childList.removeIf(f -> f.getId().equals(child.getId()));
     }
+
+    public void clearChildList() {
+        childList.clear();
+    }
 }
