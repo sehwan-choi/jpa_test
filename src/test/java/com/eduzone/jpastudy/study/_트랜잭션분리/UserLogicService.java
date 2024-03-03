@@ -14,7 +14,7 @@ public class UserLogicService {
     @Transactional
     public Long service() {
         User name = new User("name", 1, "010-1234-5678");
-        return userRepository.save(name).getId();
+        return userRepository.save(name).getId().getId();
     }
 
     @Transactional

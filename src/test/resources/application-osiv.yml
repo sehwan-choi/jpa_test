@@ -9,12 +9,14 @@ spring:
     password:
 
   jpa:
-#    hibernate:
-#      ddl-auto: create
+    hibernate:
+      ddl-auto: create
     properties:
       hibernate:
         #        show_sql: true
         format_sql: true
+#        default_batch_fetch_size: 1000
+#    open-in-view: false
 
 logging:
   level:
@@ -25,8 +27,3 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type: TRACE
     org.hibernate.orm.jdbc.bind: trace # binding data를 출력
-
-    org.hibernate.engine.internal: TRACE
-    org.springframework.transaction: TRACE
-    org.hibernate.event: TRACE
-    org.hibernate.engine: TRACE
