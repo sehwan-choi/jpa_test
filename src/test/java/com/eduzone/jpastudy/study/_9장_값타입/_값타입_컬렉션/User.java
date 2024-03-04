@@ -27,11 +27,11 @@ public class User {
 
     /*
     @CollectionTable(name = "")이 없는경우
-        테이블의 이름은 해당 객체이름(User) + 프로퍼티명으로 지어진다
+        테이블의 이름은 해당 엔티티 이름(User) + "_" + 프로퍼티명으로 지어진다
         ex). USER_FAVORITE_FOODS
 
     @CollectionTable(joinColumns = @JoinColumn(name = "")이 없는경우
-        해당 객체이름(User) + 해당 객체 PK 프로퍼티명으로 지어진다.
+        해당 엔티티 이름(User) + "_ID" 로 지어진다.
         ex). USER_ID
     */
     @ElementCollection
@@ -40,7 +40,7 @@ public class User {
             joinColumns = @JoinColumn(name = "memmber_id")
     )
     // @Column이 없다면 기본 컬럼명은 프로퍼티명으로 지어진다
-    // favorite_fodds
+    // favorite_foods
     @Column(name = "user_food")
     private Set<String> favoriteFoods = new HashSet<>();
 
