@@ -1,4 +1,4 @@
-package com.eduzone.jpastudy.study.my.lombok;
+package com.eduzone.jpastudy.study.my.lombok_builder;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -18,7 +18,7 @@ public class MyObject {
     static class Builder {
         MyObject build() {
             if (Objects.isNull(id) || id < 0) {
-                throw new RuntimeException("Invaid id");
+                throw new RuntimeException("Invalid id");
             }
             if (Objects.isNull(name)) {
                 throw new RuntimeException("name is null");

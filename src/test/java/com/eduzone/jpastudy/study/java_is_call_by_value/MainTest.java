@@ -36,10 +36,10 @@ public class MainTest {
         HashMap<String, String> map = new HashMap<>();
         map.put("1","14134");
 
-        System.out.println("1 = " + map);
+        System.out.println("1 = " + map.hashCode());
 
         qq2(map);
-        System.out.println("2 = " + map);
+        System.out.println("2 = " + map.hashCode());
     }
 
     void qq2(Map map) {
