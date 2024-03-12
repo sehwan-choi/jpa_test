@@ -30,6 +30,7 @@ dependencies {
 
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+	implementation 'commons-codec:commons-codec:1.16.1'
 }
 
 tasks.named('bootBuildImage') {

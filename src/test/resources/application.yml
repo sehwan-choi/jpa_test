@@ -9,12 +9,16 @@ spring:
     password:
 
   jpa:
-#    hibernate:
-#      ddl-auto: create
+    hibernate:
+      ddl-auto: create
     properties:
       hibernate:
         #        show_sql: true
         format_sql: true
+
+common:
+  aes:
+    key: A957D12D8F5B1265DB1E9CE46CB33123
 
 logging:
   level:
