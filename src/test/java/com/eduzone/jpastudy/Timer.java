@@ -12,7 +12,7 @@ public class Timer {
 
     public void end() {
         endTime = System.currentTimeMillis();
-        System.out.println("total : " + (endTime - startTime));
+        System.out.println("total : " + (endTime - startTime) + "ms");
         init();
     }
 

@@ -36,31 +36,4 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.address = address;
     }
-
-    @PostLoad
-    public void postLoad() {
-        System.out.println("postLoad");
-//        AES256Crypto crypto = new AES256Crypto("A957D12D8F5B1265DB1E9CE46CB33123");
-//        this.name = crypto.decrypt(name);
-//        this.phoneNumber = crypto.decrypt(phoneNumber);
-//        this.address = crypto.decrypt(address);
-    }
-
-    @PrePersist
-    public void prePersist() {
-        System.out.println("prePersist");
-//        AES256Crypto crypto = new AES256Crypto("A957D12D8F5B1265DB1E9CE46CB33123");
-//        this.name = crypto.encrypt(name);
-//        this.phoneNumber = crypto.encrypt(phoneNumber);
-//        this.address = crypto.encrypt(address);
-    }
-
-    @PreUpdate
-    public void preUpdate() {
-        System.out.println("preUpdate");
-//        AES256Crypto crypto = new AES256Crypto("A957D12D8F5B1265DB1E9CE46CB33123");
-//        this.name = crypto.encrypt(name);
-//        this.phoneNumber = crypto.encrypt(phoneNumber);
-//        this.address = crypto.encrypt(address);
-    }
 }

@@ -7,8 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 
-import java.util.List;
-
 @SpringBootTest
 @SpringBootApplication(scanBasePackages = "com.eduzone.jpastudy.study.listener_encryt")
 @Rollback(value = false)
@@ -27,11 +25,17 @@ public class TestMain {
 
     @Test
     void init() {
+        Timer timer = new Timer();
+        timer.start();
         service.init();
+        timer.end();
     }
 
     @Test
     void get() {
+        Timer timer = new Timer();
+        timer.start();
         service.printAll();
+        timer.end();
     }
 }
