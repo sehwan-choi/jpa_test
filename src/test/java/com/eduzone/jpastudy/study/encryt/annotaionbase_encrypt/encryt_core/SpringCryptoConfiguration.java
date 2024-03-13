@@ -1,8 +1,8 @@
-package com.eduzone.jpastudy.study.listener_encryt.encryt_core;
+package com.eduzone.jpastudy.study.encryt.annotaionbase_encrypt.encryt_core;
 
 
-import com.eduzone.jpastudy.study.listener_encryt.encryt_core.impl.AES256Crypto;
-import com.eduzone.jpastudy.study.listener_encryt.encryt_core.impl.KeyNameBasedCryptoContextHolder;
+import com.eduzone.jpastudy.study.encryt.annotaionbase_encrypt.encryt_core.impl.AES256Crypto;
+import com.eduzone.jpastudy.study.encryt.annotaionbase_encrypt.encryt_core.impl.KeyNameBasedCryptoContextHolder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.eduzone.jpastudy.study.listener_encryt;
+package com.eduzone.jpastudy.study.encryt.convert_encrypt;
 
 import jakarta.persistence.AttributeConverter;
 import org.springframework.beans.factory.annotation.Value;

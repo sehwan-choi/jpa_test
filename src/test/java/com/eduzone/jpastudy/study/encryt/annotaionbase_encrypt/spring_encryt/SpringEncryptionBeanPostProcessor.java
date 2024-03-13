@@ -1,4 +1,4 @@
-package com.eduzone.jpastudy.study.listener_encryt.spring_encryt;
+package com.eduzone.jpastudy.study.encryt.annotaionbase_encrypt.spring_encryt;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManagerFactory;

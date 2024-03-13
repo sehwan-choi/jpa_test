@@ -1,4 +1,4 @@
-package com.eduzone.jpastudy.study.listener_encryt;
+package com.eduzone.jpastudy.study.encryt.annotaionbase_encrypt;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

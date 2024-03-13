@@ -1,4 +1,4 @@
-package com.eduzone.jpastudy.study.listener_encryt.encryt_core.exception;
+package com.eduzone.jpastudy.study.encryt.annotaionbase_encrypt.encryt_core.exception;
 
 public class CryptoException extends RuntimeException {
 

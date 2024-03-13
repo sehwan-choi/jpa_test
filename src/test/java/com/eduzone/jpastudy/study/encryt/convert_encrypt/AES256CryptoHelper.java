@@ -1,7 +1,6 @@
-package com.eduzone.jpastudy.study.listener_encryt.encryt_core.impl;
+package com.eduzone.jpastudy.study.encryt.convert_encrypt;
 
-import com.eduzone.jpastudy.study.listener_encryt.encryt_core.Crypto;
-import com.eduzone.jpastudy.study.listener_encryt.encryt_core.exception.CryptoException;
+import com.eduzone.jpastudy.study.encryt.annotaionbase_encrypt.encryt_core.exception.CryptoException;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Hex;
 
@@ -13,15 +12,9 @@ import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-public class AES256Crypto implements Crypto {
+public class AES256CryptoHelper {
 
-    private final String aesKey;
-
-    public AES256Crypto(String aesKey) {
-        this.aesKey = aesKey;
-    }
-
-    public String encrypt(String raw) {
+    public static String encrypt(String raw, String aesKey) {
         if (raw == null || raw.isBlank() || raw.isEmpty()) {
             throw new CryptoException("AESHexEncrypt input raw text is empty(blank) or null");
         }
@@ -49,7 +42,7 @@ public class AES256Crypto implements Crypto {
         }
     }
 
-    public String decrypt(String encodedText) {
+    public static String decrypt(String encodedText, String aesKey) {
         if (encodedText == null || encodedText.isEmpty() || encodedText.isBlank()) {
             throw new CryptoException("AESHexDecrypt input encoded text is empty(blank) or null");
         }

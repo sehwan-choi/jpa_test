@@ -1,7 +1,5 @@
-package com.eduzone.jpastudy.study.listener_encryt.spring_encryt;
+package com.eduzone.jpastudy.study.encryt.annotaionbase_encrypt.spring_encryt;
 
-
-import com.eduzone.jpastudy.study.listener_encryt.encryt_core.impl.AES256Crypto;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
