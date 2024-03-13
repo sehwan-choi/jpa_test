@@ -1,6 +1,7 @@
 package com.eduzone.jpastudy.study.listener_encryt;
 
 import com.eduzone.jpastudy.Timer;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,30 +13,73 @@ import org.springframework.test.annotation.Rollback;
 @Rollback(value = false)
 public class TestMain {
 
-    @Autowired
-    UserRepository repository;
+    /**
+     * @Encrypted (Annocation) vs Converter 속도 테스트 (userDataSet메서드 이용)
+     *
+     * 1000건 insert(단건 insert)
+     *               1차    2차    3차  (단위 ms)
+     * @Encrypted :  752   804    875
+     * @Converter :  745   722    741
+     *
+     * 1000건 select (userDateGet메서드 이용)
+     *               1차    2차    3차  (단위 ms)
+     * @Encrypted :  316   316    312
+     * @Converter :  313   346    388
+     *
+     */
+    @Nested
+    class Encrypt {
 
-    @Autowired
-    TestService service;
-    @Test
-    void test() {
-        User user = new User("user", 10, "010-1234-5678", "seoul");
-        repository.save(user);
+        @Autowired
+        EncryptUserService service;
+
+        @Test
+        void userDataSet() {
+            Timer timer = new Timer();
+            timer.start();
+            service.init(1000);
+            timer.end();
+        }
+
+        @Test
+        void userDateGet() {
+            Timer timer = new Timer();
+            timer.start();
+            service.printAll();
+            timer.end();
+        }
+
+        @Test
+        void update() {
+            service.update();
+        }
     }
 
-    @Test
-    void init() {
-        Timer timer = new Timer();
-        timer.start();
-        service.init();
-        timer.end();
-    }
+    @Nested
+    class Convert {
 
-    @Test
-    void get() {
-        Timer timer = new Timer();
-        timer.start();
-        service.printAll();
-        timer.end();
+        @Autowired
+        ConvertUserService service;
+
+        @Test
+        void userDataSet() {
+            Timer timer = new Timer();
+            timer.start();
+            service.init(1000);
+            timer.end();
+        }
+
+        @Test
+        void userDateGet() {
+            Timer timer = new Timer();
+            timer.start();
+            service.printAll();
+            timer.end();
+        }
+
+        @Test
+        void update() {
+            service.update();
+        }
     }
 }

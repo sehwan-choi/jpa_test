@@ -3,13 +3,15 @@ package com.eduzone.jpastudy.study.listener_encryt.encryt_core;
 
 import com.eduzone.jpastudy.study.listener_encryt.encryt_core.impl.AES256Crypto;
 import com.eduzone.jpastudy.study.listener_encryt.encryt_core.impl.KeyNameBasedCryptoContextHolder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SpringCryptoConfiguration {
 
-    private final String aesKey = "A957D12D8F5B1265DB1E9CE46CB33123";
+    @Value("${common.aes.key}")
+    private String aesKey;
 
     public static final String USER_CRYPTO_NAME = "user_crypto";
 

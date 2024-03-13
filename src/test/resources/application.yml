@@ -18,19 +18,19 @@ spring:
 
 common:
   aes:
-    key: A957D12D8F5B1265DB1E9CE46CB33123
+    key: 59C3E93B9EDB31B115ADAC35D7DE8123
 
-logging:
-  level:
-    org.springframework.transaction.interceptor: TRACE
-    org.springframework.jdbc.datasource.DataSourceTransactionManager: DEBUG
-    org.springframework.orm.jpa.JpaTransactionManager: DEBUG
-    org.hibernate.resource.transaction: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type: TRACE
-    org.hibernate.orm.jdbc.bind: trace # binding data를 출력
-
-    org.hibernate.engine.internal: TRACE
-    org.springframework.transaction: TRACE
-    org.hibernate.event: TRACE
-    org.hibernate.engine: TRACE
+#logging:
+#  level:
+#    org.springframework.transaction.interceptor: TRACE
+#    org.springframework.jdbc.datasource.DataSourceTransactionManager: DEBUG
+#    org.springframework.orm.jpa.JpaTransactionManager: DEBUG
+#    org.hibernate.resource.transaction: DEBUG
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type: TRACE
+#    org.hibernate.orm.jdbc.bind: trace # binding data를 출력
+#
+#    org.hibernate.engine.internal: TRACE
+#    org.springframework.transaction: TRACE
+#    org.hibernate.event: TRACE
+#    org.hibernate.engine: TRACE

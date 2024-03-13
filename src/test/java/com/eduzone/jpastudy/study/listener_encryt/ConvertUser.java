@@ -1,7 +1,5 @@
 package com.eduzone.jpastudy.study.listener_encryt;
 
-import com.eduzone.jpastudy.study.listener_encryt.encryt_core.impl.AES256Crypto;
-import com.eduzone.jpastudy.study.listener_encryt.spring_encryt.Encrypted;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,25 +10,25 @@ import lombok.*;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @EqualsAndHashCode(of = "id")
-@Table(name = "users")
-public class User {
+@Table(name = "convert_users")
+public class ConvertUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Encrypted
+    @Convert(converter = EncryptConverter.class)
     private String name;
 
     private int age;
 
-    @Encrypted(cryptoKey = "payment_crypto")
+    @Convert(converter = EncryptConverter.class)
     private String phoneNumber;
 
-    @Encrypted(cryptoKey = "user_crypto")
+    @Convert(converter = EncryptConverter.class)
     private String address;
 
-    public User(String name, int age, String phoneNumber, String address) {
+    public ConvertUser(String name, int age, String phoneNumber, String address) {
         this.name = name;
         this.age = age;
         this.phoneNumber = phoneNumber;
